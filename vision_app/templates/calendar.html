@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Calendar</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.css" />
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
+    </head>
+
+    <body>
+        <div class="navbar">
+            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+            <a href="{{ url_for('about') }}" class="navbar-item">About</a>
+            <a href="{{ url_for('contact') }}" class="navbar-item">Contact</a>
+            <a href="{{ url_for('calendar') }}" class="navbar-item">Calendar</a>
+        </div>
+
+        <div id="calendar">
+            <script>
+                let calendarElement = document.getElementById
+                ('calendar');
+
+                let calendar = new FullCalendar.Calendar
+                (calendarElement, {
+                    events : [
+                        {% for event in events %}
+                        { 
+                            title : '{{event.todo}}',
+                            start : '{{event.date}}',
+                            
+                        },
+                        {% endfor %}
+                    ]
+                    }  
+                );
+
+                calendar.render();
+            </script>
+            <hr/>
+            <footer>
+                <p>&copy; 2018</p>
+            </footer>
+        </div>
+    </body>
+</html>
