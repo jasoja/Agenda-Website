@@ -1,8 +1,14 @@
 {% extends "layout.html" %}
 {% block title %}
-Vision
+Mangrove
 {% endblock %}
 {% block content %}
-<h1>Vision - 24 hours a day, we're here to help</h1>
+<h1>Mangrove</h1>
 <p>Start planning your day now.</p>
+<body>
+    <div class="center">
+    <h1>Welcome to Mangrove</h1> 
+    <a href="{{url_for('login')}}">Login Page</a><br>
+    <a href="{{url_for('register')}}">Register Page</a><br>
+</body>
 {% endblock %}

@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template
 from datetime import datetime
 from . import app
-from . import events, webapp
+from . import webapp
 
 @app.route("/")
 def home():
@@ -15,6 +15,14 @@ def about():
 @app.route("/contact/")
 def contact():
     return render_template("contact.html")
+
+@app.route("/login/")
+def login():
+    return render_template("login.html")
+
+@app.route("/register/")
+def register():
+    return render_template("register.html")
 
 @app.route("/api/data")
 def get_data():
