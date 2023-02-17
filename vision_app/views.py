@@ -12,6 +12,10 @@ def home():
 def about():
     return render_template("about.html")
 
+@app.route("/checklist/")
+def checklist():
+    return render_template("checklist.html")
+
 @app.route("/login/")
 def login():
     return render_template("login.html")
