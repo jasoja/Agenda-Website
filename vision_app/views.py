@@ -16,10 +16,6 @@ def about():
 def checklist():
     return render_template("checklist.html")
 
-@app.route("/index/")
-def index():
-    return render_template("index.html")
-
 @app.route("/login/")
 def login():
     return render_template("login.html")

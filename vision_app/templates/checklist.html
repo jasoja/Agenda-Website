@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/static/site.css">
+        <link rel="stylesheet" href="/static/style.css">
         <title>Register</title>
 </head>
 <body>
@@ -15,17 +16,16 @@
         <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
         <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
         <a href="{{ url_for('checklist') }}" class="navbar-item">Checklist</a>
-        <a href="{{ url_for('index') }}" class="navbar-item">index</a>
     </div>
 
-    <div class="center">
-        <h1>To Do:</h1> 
-        <div>Add a new assignment: <input type ="text"><input type="submit"></div>
-        <ui>
-            <li><input type = "checkbox"> Read Chapters 3-4</li>
-            <li><input type = "checkbox"> Do problems 1-20</li>
-            <li><input type = "checkbox"> Study for midterm</li>
-        </ui>
-    </div>
-</body>
+    <h1>todos</h1>
+    <form id="form">
+      <input type="text" class="input" id="input" placeholder="Enter your todo" autocomplete="off">
+
+      <ul class="todos" id="todos"></ul>
+    </form>
+    <small>Left click to toggle completed. <br> Right click to delete todo</small>
+
+    <script src="script.js"></script>
+  </body>
 </html>
