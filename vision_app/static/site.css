@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
 body{ 
     font-size: 20px;
     margin: 0;
     padding: 0;
-    font-family: montserrat;
+    font-family: 'Poppins', sans-serif;
 }
 
 .center h1{
