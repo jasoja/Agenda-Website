@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/static/site.css">
         <link rel="stylesheet" href="/static/style.css">
-        <title>Register</title>
+        <title>Checklist</title>
 </head>
 <body>
     <div class="navbar">
@@ -17,7 +17,7 @@
         <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
         <a href="{{ url_for('checklist') }}" class="navbar-item">Checklist</a>
     </div>
-
+    <div class = "center">
     <h1>todos</h1>
     <form id="form">
       <input type="text" class="input" id="input" placeholder="Enter your todo" autocomplete="off">
@@ -26,6 +26,7 @@
     </form>
     <small>Left click to toggle completed. <br> Right click to delete todo</small>
 
-    <script src="script.js"></script>
+    <script src="/static/script.js"></script>
+  </div>
   </body>
 </html>
