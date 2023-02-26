@@ -1,7 +1,38 @@
-{% extends "layout.html" %}
-{% block title %}
-About us 
-{% endblock %}
-{% block content %}
-<p>About page for the Vision team.</p> 
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/site.css">
+    <link rel="stylesheet" href="/static/inputs.css">
+    <title>Login</title>
+    <style>
+            p {text-align: center}
+            p {font-size: 28px}
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+        <a href="{{ url_for('about') }}" class="navbar-item">About</a>
+        <a href="{{ url_for('calendar') }}" class="navbar-item">Calendar</a>
+        <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
+        <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
+        <a href="{{ url_for('checklist') }}" class="navbar-item">Checklist</a>
+    </div> 
+    <br><br><br><br><br><br><br><br>
+    <div>
+        <p>
+            Mangrove makes it easy to stay organized and focused, so you can achieve more than you ever thought possible. 
+            Much like how gardeners carefully manage the growth and structure of plants by pruning and maintaining their roots, 
+            Mangrove can keep your tasks organized, easily accessible, and under control, even when they become complex and overwhelming.
+            Use Mangrove today.
+        </p> 
+    </div>
+</body>
+
+</html>
+
+
