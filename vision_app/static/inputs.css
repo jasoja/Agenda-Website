@@ -1,12 +1,14 @@
 .centeredinput{
-    border-color: linear-gradient(180deg, rgba(74, 149, 145, 1) 0%, rgba(180, 255, 196, 1) 100%);
+    border-color: linear-gradient(180deg, rgba(74, 149, 145, 1) 100%, rgba(180, 255, 196, 1) 100%);
     text-align: center;
     left: 20%;
     position: absolute;
     font-size: 1rem;
+    border-radius: 31px;
+    border-color:  rgba(180, 255, 196, 1);
 }
 .txt_field {
-    color: rgb(255, 250, 255);
+    color: rgb(243, 243, 243);
     left: 200px;
     width: 50px;
 }
