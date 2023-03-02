@@ -4,7 +4,7 @@
     background-color: white;
     padding: 40px 30px 30px 30px;
     border-radius: 9px;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     width: 400px;
@@ -20,7 +20,7 @@
   }
   .login2::before, .login2::after {
     content: "";
-    position: absolute;
+    position: fixed;
     width: 600px;
     height: 600px;
     border-top-left-radius: 40%;
@@ -33,9 +33,9 @@
     left: 40%;
     bottom: -130%;
     background-color: rgb(192,195,188);
-    -webkit-animation: wawes 6s infinite linear;
-    -moz-animation: wawes 6s infinite linear;
-    animation: wawes 6s infinite linear;
+    -webkit-animation: wawes 7s infinite linear;
+    -moz-animation: wawes 7s infinite linear;
+    animation: wawes 7s infinite linear;
     
   }
   .login2::after {
@@ -81,37 +81,23 @@
 }
 
 .registercontainer{
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
     background-color: transparent;
-    animation: 3s slide-left;
+    animation: 5s slide-left;
     animation-fill-mode: forwards;  
   }
   @keyframes slide-left {
-  0% {left:0px; top:0px;}
-  100% {left:-475px; top:0px;}
+  25% {left:50%; top:50%;}
+  100% {left: 24%; top:50%;}
   }
 
-  @keyframes anim {
-    0% {
-        background-position: 0 25%;
-    }
-
-    50% {
-        background-position: 80% 75%;
-    }
-
-    100% {
-        background-position: 0 50%;
-    }
-}
-  
   @-webkit-keyframes wawes {
     from {
-      -webkit-transform: rotate(0);
+      -webkit-transform: rotate(1);
     }
     to {
       -webkit-transform: rotate(360deg);
@@ -119,7 +105,7 @@
   }
   @-moz-keyframes wawes {
     from {
-      -moz-transform: rotate(0);
+      -moz-transform: rotate(1);
     }
     to {
       -moz-transform: rotate(330deg);
@@ -127,11 +113,11 @@
   }
   @keyframes wawes {
     from {
-      -webkit-transform: rotate(0);
-      -moz-transform: rotate(0);
-      -ms-transform: rotate(0);
-      -o-transform: rotate(0);
-      transform: rotate(0);
+      -webkit-transform: rotate(1);
+      -moz-transform: rotate(1);
+      -ms-transform: rotate(1);
+      -o-transform: rotate(1);
+      transform: rotate(1);
     }
     to {
       -webkit-transform: rotate(360deg);
@@ -141,4 +127,3 @@
       transform: rotate(360deg);
     }
   }
- 

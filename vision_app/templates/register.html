@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/static/site.css">
     <link rel="stylesheet" href="/static/inputs.css">
     <link rel="stylesheet" href="/static/dropdown.css">
+    <link rel="stylesheet" href="/static/login2.css">
+    <script src='/static/position.js'></script>
     <title>Register</title>
     <style>
         input[type=submit] {
@@ -37,29 +39,18 @@
         Use Mangrove today.
         </p>
     </div>
-    <div class="center">
-    <div class = "boxregister">
-    <h1>Register</h1> 
-    <form method="post">
-        <div class="txt_field">
-            <input type="text" class = "centeredinput" placeholder="username"required><br>
-        </div>
-        <br>
-        <div class="txt_field">
-            <input type="password" class = "centeredinput" placeholder="password" required><br>
-            
-        </div>
-        <br>
-        <div class="txt_field">
-            <input type="password" class = "centeredinput" placeholder="confirm password" required><br>
-        <br>    
-        <div class = "middle">
-        <input type="submit" value="Sign Up"><br>
-        <a href="{{url_for('login')}}">Already have an account? Log In</a><br>
-        <a href="{{url_for('home')}}">Return</a>
-    </div>
-    </div>
-    </form> 
+    <div class = "registercontainer">
+        <form class="login2">
+            <h1>Welcome to Mangrove</h1>   
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button>Sign Up</button>
+            <br>
+            <br>
+            <div class ="foot-lnk">
+                <a href="{{ url_for('login') }}"class= "foot-lnk">Already have an account? Log in!</a>
+            </div>
+          </form>
     </div>
 
 
