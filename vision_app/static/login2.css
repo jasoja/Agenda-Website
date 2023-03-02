@@ -75,6 +75,39 @@
   .login2 > button:hover {
     background-color: #c0c3bc;
   }
+  .foot-lnk{
+    font-family: "Asap", sans-serif;
+    color: rgb(108,102,82);
+}
+
+.registercontainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: transparent;
+    animation: 3s slide-left;
+    animation-fill-mode: forwards;  
+  }
+  @keyframes slide-left {
+  0% {left:0px; top:0px;}
+  100% {left:-475px; top:0px;}
+  }
+
+  @keyframes anim {
+    0% {
+        background-position: 0 25%;
+    }
+
+    50% {
+        background-position: 80% 75%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
   
   @-webkit-keyframes wawes {
     from {
