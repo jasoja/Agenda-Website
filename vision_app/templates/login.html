@@ -28,10 +28,14 @@
     <div class="navbar">
         <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
         <a href="{{ url_for('about') }}" class="navbar-item">About</a>
-        <a href="{{ url_for('calendar') }}" class="navbar-item">Calendar</a>
         <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
         <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
-        <a href="{{ url_for('checklist') }}" class="navbar-item">Checklist</a>
+        <div class="dropdown">
+            <a href="{{ url_for('login') }}" class="dropbtn">Agenda</a>
+            <div class="dropdown-content">
+                <a href="{{ url_for('calendar') }}">Calendar</a>
+                <a href="{{ url_for('checklist') }}">Checklist</a>
+        </div>
     </div>
       
     <form class="login2" action='/users' method='get'>
