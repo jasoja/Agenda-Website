@@ -40,11 +40,11 @@
         </p>
     </div>
     <div class = "registercontainer">
-        <form class="login2">
+        <form class="login2" action='/users' method='post'>
             <h1>Welcome to Mangrove</h1>   
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <button>Sign Up</button>
+            <input name="username" type="text" required>
+            <input name="Password" type="password" required>
+            <input type ="submit" value="Sign Up">
             <br>
             <br>
             <div class ="foot-lnk">

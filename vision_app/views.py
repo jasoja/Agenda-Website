@@ -1,8 +1,12 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, request
 from datetime import datetime
 from . import app
 from . import webapp
+
+@app.route('/users', methods=['POST'])
+def list_of_users():
+    username = request.form['username']
+    return username
 
 @app.route("/")
 def home():
