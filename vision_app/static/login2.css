@@ -93,7 +93,7 @@
   
   @keyframes slide-left {
   25% {left:50%; top:50%;}
-  100% {left: 24%; top:50%;}
+  100% {left: 32%; top:50%;}
   }
 
   @-webkit-keyframes wawes {

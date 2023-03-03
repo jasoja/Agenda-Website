@@ -10,6 +10,7 @@ body{
     justify-content: center;
     height: 100vh;
     margin: 0;
+
 }
 
 
@@ -88,12 +89,19 @@ h1 {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .container {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px
+    width: 400px;
+    animation: 5s slide-right;
+    animation-fill-mode: forwards;  
   }
+
+  @keyframes slide-right {
+    25% {left:50%; top:50%;}
+    100% {left: 65%; top:50%;}
+    }
   .calendarcss {
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     backdrop-filter: blur(100px);
