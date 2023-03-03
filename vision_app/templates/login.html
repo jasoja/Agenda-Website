@@ -11,7 +11,7 @@
     <script src='/static/position.js'></script>
     <title>Login</title>
     <style>
-         input[type=submit] {
+    input[type=submit] {
     font-family: "Asap", sans-serif;
     cursor: pointer;
     color: #fff;
@@ -43,6 +43,7 @@
                 <a href="{{ url_for('checklist') }}">Checklist</a>
         </div>
     </div>
+</div> 
       
     <form class="login2" action='/users' method='post'>
         <h1>Welcome to Mangrove</h1>   
@@ -53,7 +54,6 @@
             <a href="{{ url_for('register') }}"class= "foot-lnk">Don't have an account? Sign up!</a>
         </div>
       </form>
-    </div> 
 </body>
 
 </html>
