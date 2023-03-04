@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="/static/buttons.css">
     <link rel="stylesheet" href="/static/dropdown.css">
     <link rel="stylesheet" href="/static/login2.css">
+    <link rel="stylesheet" href="/static/navbar2.css">
     <script src='/static/position.js'></script>
+    <script src='/static/burgermenu.js'></script>
     <title>Login</title>
     <style>
          input[type=submit] {
@@ -32,18 +34,15 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
-        <a href="{{ url_for('about') }}" class="navbar-item">About</a>
-        <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
-        <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
-        <div class="dropdown">
-            <a href="{{ url_for('home') }}" class="dropbtn">Agenda</a>
-            <div class="dropdown-content">
-                <a href="{{ url_for('calendar') }}">Calendar</a>
-                <a href="{{ url_for('checklist') }}">Checklist</a>
-        </div>
-    </div> 
+        <div id="mySidepanel" class="sidepanel">
+            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+            <a href="{{ url_for('about') }}" class="navbar-item">About</a>
+            <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
+            <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
+          </div>
+          <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
     </div>
+    
     <form class="login2">
         <h1>Welcome to Mangrove</h1>   
         <input type="text" placeholder="Username">
@@ -60,4 +59,8 @@
     </div> 
 </body>
 
-</html>
+</html><div class="container" onclick="myFunction(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>

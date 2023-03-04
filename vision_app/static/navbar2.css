@@ -1,0 +1,46 @@
+.sidepanel  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 1000px;
+    top: 70px;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    background: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .sidepanel a {
+    margin-left: 30px;
+    position: relative;
+    display:inline-block;
+    font-size: 25px;
+    padding: 20px;
+    color: #3a3633;
+    transition: 0.3s;
+  }
+  
+  .sidepanel a:hover {
+    color: #7c7360;
+  }
+  
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color:transparent;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
