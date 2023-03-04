@@ -8,31 +8,34 @@
     <link rel="stylesheet" href="/static/inputs.css">
     <link rel="stylesheet" href="/static/dropdown.css">
     <link rel="stylesheet" href="/static/login2.css">
+    <link rel="stylesheet" href="/static/navbar2.css">
+    <script src='/static/position.js'></script>
+    <script src='/static/burgermenu.js'></script>
     <title>Login</title>
-    <style>
-            p {text-align: center}
-            p {font-size: 28px}
-    </style>
 </head>
 
 <body>
     <div class="navbar">
-        <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
-        <a href="{{ url_for('about') }}" class="navbar-item">About</a>
-        <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
-        <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
-        <div class="dropdown">
-            <a href="{{ url_for('about') }}" class="dropbtn">Agenda</a>
-            <div class="dropdown-content">
-                <a href="{{ url_for('calendar') }}">Calendar</a>
-                <a href="{{ url_for('checklist') }}">Checklist</a>
+        <div class="topnav-right">
+            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
         </div>
-    </div> 
+        <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
+        <div id="mySidepanel" class="sidepanel">
+            <a href="{{ url_for('about') }}" class="navbar-item">About</a>
+            <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
+            <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
+            <div class="dropdown">
+                <a href="{{ url_for('login') }}" class="dropbtn">Agenda</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('calendar') }}">Calendar</a>
+                    <a href="{{ url_for('checklist') }}">Checklist</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <br><br><br><br><br><br><br><br>
-    <div>
+    <div class = "container">
         <p>
-            Mangrove makes it easy to stay organized and focused, so you can achieve more than you ever thought possible. 
+                Mangrove makes it easy to stay organized and focused, so you can achieve more than you ever thought possible. 
             Much like how gardeners carefully manage the growth and structure of plants by pruning and maintaining their roots, 
             Mangrove can keep your tasks organized, easily accessible, and under control, even when they become complex and overwhelming.
             Use Mangrove today.
