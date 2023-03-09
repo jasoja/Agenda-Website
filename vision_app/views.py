@@ -20,9 +20,9 @@ def about():
 def checklist():
     return render_template("checklist.html")
 
-@app.route("/combine/")
-def combine():
-    return render_template("combine.html")
+@app.route("/classes/")
+def classes():
+    return render_template("classes.html")
 
 @app.route("/login/")
 def login():
