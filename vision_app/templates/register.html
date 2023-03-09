@@ -28,31 +28,33 @@
     <div class="navbar">
         <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
         <a href="{{ url_for('about') }}" class="navbar-item">About</a>
-        <a href="{{ url_for('calendar') }}" class="navbar-item">Calendar</a>
-        <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
-        <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
-        <a href="{{ url_for('checklist') }}" class="navbar-item">Checklist</a>
-        <a href="{{ url_for('combine') }}" class="navbar-item">Combine</a>
+
     </div>
     <div class ="container">
         <p>Plant the seeds of productivity with Mangrove - the task management app that helps you grow your to-do list and achieve your goals.<br>
         Use Mangrove today.
         </p>
     </div>
+
     <div class = "registercontainer">
-        <form class="login2" action='/users' method='post'>
-            <h1>Welcome to Mangrove</h1>   
-            <input name="username" type="text" required>
-            <input name="Password" type="password" required>
+        <form name='registration-form'class="login2" action='/register/register-user' method='post'>
+            <h1>Welcome to Mangrove</h1>
+            <label> Email </label>
+            <input name="email-address" onfocusout="checkIfUserExists(event)" type="email" required>
+            <label> Name </label>
+            <input name="name" type="text" required>
+            <label> Password </label>
+            <input name="password" type="password" required>
             <input type ="submit" value="Sign Up">
             <br>
             <br>
             <div class ="foot-lnk">
-                <a href="{{ url_for('login') }}"class= "foot-lnk">Already have an account? Log in!</a>
+                <a href="{{ url_for('home') }}"class= "foot-lnk">Already have an account? Log in!</a>
             </div>
           </form>
+        <script src="{{ url_for('static', filename='js/validate_users.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     </div>
-
 
 </body>
 

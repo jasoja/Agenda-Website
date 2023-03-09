@@ -4,8 +4,8 @@ from datetime import datetime
 import sqlalchemy
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(120), index=True, unique = True, nullable=False)
+    email = db.Column(db.String(120), index=True, unique = True,primary_key=True)
+    name = db.Column(db.String(120),  nullable=False)
     password_hash = db.Column(db.String(128))
     items = db.relationship('Item', backref='user',lazy=True)
 
@@ -19,4 +19,4 @@ class Item(db.Model):
     user_name = db.Column(db.String, db.ForeignKey('user.name')) # access the user's unique name
     task = db.Column(db.String(128), primary_key=True) # task list name
     date = db.Column(db.DateTime(timezone=True), default=datetime.now) # the date
- 
+
