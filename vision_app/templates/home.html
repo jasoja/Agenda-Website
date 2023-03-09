@@ -32,10 +32,10 @@
     }
     </style>
 </head>
-<body>
+<header>
     <div class="navbar">
         <div class="topnav-right">
-            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+            <a href="{{ url_for('home') }}" class="navbar-brand" style="display: flex; justify-content: center;align-items: center;" >Home</a>
         </div>
         <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
         <div id="mySidepanel" class="sidepanel">
@@ -51,7 +51,9 @@
             </div>
         </div>
     </div>
-    
+</header>
+<body>
+
     <form class="login2">
         <h1>Welcome to Mangrove</h1>   
         <input type="text" placeholder="Username">
