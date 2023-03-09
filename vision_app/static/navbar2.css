@@ -7,6 +7,7 @@
   padding: 15px 10px 15px 20px;
   align-items: center;
   justify-content: center;
+  height: 2vw;
 }
 
 .navbar a {
@@ -16,11 +17,22 @@
 
 .navbar-brand {
   content: url('https://cdn.discordapp.com/attachments/547910378735271937/1081646931723419668/IMG_0310.png');
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
+  margin-left: 30px;
+  display: inline-block;
+  top:auto;
+
+
 
 }
-
+.topnav-right {
+  float: right;
+  margin-right: 10px;
+  margin: 0px 10px 2rem 0px;
+  align-items: center;
+  justify-content: center;
+}
 .navbar-item {
   font-variant: small-caps;
   margin-left: 30px;
@@ -40,10 +52,6 @@
   scale: 0 1;
   transform-origin: left;
   transition: scale 0.25s;
-}
-.topnav-right {
-  float: right;
-  margin-right: 10px;
 }
 .navbar-item:hover::before {
   scale: 1;
@@ -79,6 +87,28 @@
   
   .sidepanel a:hover {
     color: #7c7360;
+  }
+  .burgerhover {
+    font-variant: small-caps;
+    position: relative;
+    display: inline-block;
+    top:auto;
+  }
+  .burgerhover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+    border-radius: 4px;
+    scale: 0 1;
+    transform-origin: left;
+    transition: scale 0.25s;
+  }
+  .burgerhover:hover {
+    scale: 1;
   }
   
   .sidepanel .closebtn {

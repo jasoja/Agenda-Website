@@ -40,7 +40,7 @@
 }
   
 .dropdown:hover .dropdown-content
-   {display: block;
+   {display:contents;
 }
 
 .dropdown::before {

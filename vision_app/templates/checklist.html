@@ -13,20 +13,24 @@
         <title>Checklist</title>
 </head>
 <body>
-    <div class="navbar">
+  <div class="navbar">
+    <div class="topnav-right">
         <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
+    <div id="mySidepanel" class="sidepanel">
         <a href="{{ url_for('about') }}" class="navbar-item">About</a>
         <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
         <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
         <div class="dropdown">
-          <a href="{{ url_for('home') }}" class="dropbtn">Agenda</a>
-          <div class="dropdown-content">
-              <a href="{{ url_for('calendar') }}">Calendar</a>
-              <a href="{{ url_for('checklist') }}">Checklist</a>
+            <a href="{{ url_for('login') }}" class="dropbtn">Agenda</a>
+            <div class="dropdown-content">
+                <a href="{{ url_for('calendar') }}">Calendar</a>
+                <a href="{{ url_for('checklist') }}">Checklist</a>
+            </div>
         </div>
-      </div>
     </div>
-
+</div>
     <div class = "centeredchecklist">
     <h1>Checklist</h1>
     <form id="form">

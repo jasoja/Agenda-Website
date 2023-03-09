@@ -2,9 +2,12 @@
 
 body{ 
     background: url("https://cdn.discordapp.com/attachments/898010157253025862/1080730185898414080/mangrovebackground2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #444;
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    height: 49.3vw;
 }
 
 .center h1{
@@ -38,7 +41,7 @@ h1 {
 
 .body-content {
     padding: 5px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 .container {
     position: fixed;
@@ -73,7 +76,4 @@ h1 {
   p {
     backdrop-filter: blur(100px);
   }
-  .topnav-right {
-    float: right;
-    margin-right: 10px;
-  }
+
