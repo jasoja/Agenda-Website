@@ -21,18 +21,21 @@
           <div class="dropdown-content">
               <a href="{{ url_for('calendar') }}" class="navbar-item">Calendar</a>
               <a href="{{ url_for('checklist') }}" class="navbar-item">Checklist</a>
-      </div>
-  </div> 
+          </div>
     </div>
-    <div class = "centeredchecklist">
-    <h1>Checklist</h1>
-    <form id="form">
-      <input type="text" class="input" id="input" placeholder="Enter a task" autocomplete="off">
-      <ul class="todos" id="todos"></ul>
+    <form name='add-task-form' action="{{'add_task'}}" method='post'>
+      <label> Task Name </label>
+      <input name="email-address" onfocusout="checkIfUserExists(event)" type="email" required>
+      <label> Name </label>
+      <input name="name" type="text" required>
+      <label> Password </label>
+      <input name="password" type="password" required>
+      <input type ="submit" value="Sign Up">
+      <br>
+      <br>
+      <div class ="foot-lnk">
+          <a href="{{ url_for('home') }}"class= "foot-lnk">Already have an account? Log in!</a>
+      </div>
     </form>
-    <br>
-    <small>Left click to toggle completed. <br> Right click to delete the task</small>
-  </div>
-    <script src="/static/script.js"></script>
-  </body>
+
 </html>

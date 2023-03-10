@@ -18,5 +18,7 @@ class User(db.Model):
 class Item(db.Model):
     user_name = db.Column(db.String, db.ForeignKey('user.name')) # access the user's unique name
     task = db.Column(db.String(128), primary_key=True) # task list name
+    course_category = db.Column(db.String(128)) # task course name
+    course_weight = db.Column(db.String(128)) # task course weight % (convert via python code?)
     date = db.Column(db.DateTime(timezone=True), default=datetime.now) # the date
 
