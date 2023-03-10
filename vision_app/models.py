@@ -20,5 +20,4 @@ class Item(db.Model):
     task = db.Column(db.String(128), primary_key=True) # task list name
     course_category = db.Column(db.String(128)) # task course name
     course_weight = db.Column(db.String(128)) # task course weight % (convert via python code?)
-    date = db.Column(db.DateTime(timezone=True), default=datetime.now) # the date
-
+    date = db.Column(db.DateTime(timezone=True), default=datetime.now) # the date (1914-12-20 21:29:84)

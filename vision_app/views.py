@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify, s
 from datetime import datetime
 from . import app, webapp
 from vision_app import db
-from vision_app.models import User
+from vision_app.models import User, Item
 
 @app.route("/")
 def home():
@@ -14,6 +14,9 @@ def about():
 
 @app.route("/checklist/")
 def checklist():
+    user_name = None
+    if session['user']:
+        user_name = session['user']
     return render_template("checklist.html")
 
 @app.route("/combine/")
@@ -45,7 +48,7 @@ def login_user():
     form = request.form
     user = User.query.filter_by(email = form['email-address']).first()
     if not user:
-        flash("Doctor doesn't exist")
+        flash("User doesn't exist")
         return redirect(url_for('home')) 
     if user.check_password(form['password']):
         session['user'] = user.name 
@@ -62,6 +65,26 @@ def logout_user():
 @app.route("/api/data")
 def get_data():
     return app.send_static_file("data.json")
+
+@app.route("/checklist/add_task", methods=['POST'])
+def add_task():
+    form = request.form
+    task_name = form['task_name']
+    task = Item.query.filter_by(task=task_name).first()
+    if not task:
+        taskItem = Item(
+            task = task_name,
+            course_category=form['course_category'],
+            course_weight=form['course_weight'],
+            date= datetime.strptime(form['due_date'], '%m/%d/%y %H:%M:%S')
+        )
+        db.session.add(taskItem)
+        db.session.commit()
+        flash('Task successfully added to check list')
+        return redirect(url_for('checklist'))
+    else:
+        flash('Task already exists')
+        return redirect(url_for('checklist'))
 
 @app.route('/validate-user-registration', methods=['POST'])
 def validate_user_registration():
