@@ -22,6 +22,7 @@
                 <a href="{{ url_for('about') }}" class="navbar-item">About</a>
                 <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
                 <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
+                <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
                 <div class="dropdown">
                     <a href="{{ url_for('login') }}" class="dropbtn">Agenda</a>
                     <div class="dropdown-content">
@@ -32,11 +33,23 @@
             </div>
         </div>
 
-        <br>
+        <div class = "upcoming">
+            <div class = "card">
+                <h1 style = "background-color: transparent; color:rgb(102, 85, 123); "> Upcoming Assignments</h1>
+                    <div class = "assignments">
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Read chapters 1-2</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Essay draft</label><br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+            </div>
+        </div>
 
-        <!-- <div class = "container"> -->
-
-        <button class = "collapsible" style ="background-color:rgb(65, 95, 56); color:white;">English</button>
+        <button class = "collapsible" style ="background-color:rgb(236, 236, 236); color:rgb(0, 0, 0);">English</button>
         <div class="content">
             <div class = "hw">
                 <h2> Homework</h2>
@@ -78,24 +91,10 @@
 
         </div>
 
-            </div>
-
-        <div class = "upcoming">
-            <div class = "card">
-                <h1 style = "background-color: transparent; color:rgb(102, 85, 123); "> Upcoming Assignments</h1>
-                    <div class = "assignments">
-                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
-                        <label for="hw1"> Read chapters 1-2</label><br>
-                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
-                        <label for="hw1"> Essay draft</label><br>
-                    </div>
-            </div>
-        </div>
-
         </div>
 
 
-        <button class = "collapsible" style ="background-color:rgb(34, 73, 82); color:white;">Calculus</button>
+        <button class = "collapsible" style ="background-color:rgb(236, 236, 236); color:rgb(0, 0, 0);">Calculus</button>
         <div class="content">
             <div class = "hw">
                 <h2> Homework</h2>
@@ -138,7 +137,7 @@
         </div>
 
 
-        <button class = "collapsible" style ="background-color:rgb(34, 35, 82); color:white;">Physics</button>
+        <button class = "collapsible" style ="background-color:rgb(236, 236, 236); color:black(0, 0, 0);">Physics</button>
         <div class="content">
             <div class = "hw">
                 <h2> Homework</h2>

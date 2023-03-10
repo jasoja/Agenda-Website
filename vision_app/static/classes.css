@@ -1,8 +1,3 @@
-.container{
-    margin-left: 20px;
-    width: 100%;
-    margin-bottom: 100px;
-  }
 
 .classes{
     float: left; 
@@ -19,12 +14,13 @@
 
 .upcoming{
     float: right;
-    width: 20%;
+    width: 35%;
     border: 1px;
     border-radius: 4px;
     background-color: rgb(131, 115, 154);
-    margin-right: 100px;
+    /* margin-right: 100px; */
     padding: 20px;
+    height: 100%;
 }
 
 .hw{
@@ -66,7 +62,8 @@ h2{
     float: left; 
     margin-left: 260px;
     margin-right: 70px;
-    border: 4px solid;
+    border-color:rgb(236, 236, 236);
+    border-left: 9px solid rgb(157, 157, 143);
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
     padding-left: 0px;
@@ -76,11 +73,11 @@ h2{
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
     margin-top: 40px;
-
+    box-shadow:inset;
   }
 
   .active, .collapsible:hover {
-    background-color: #555;
+    background-color: #cfcfcf;
   }
   
   .content {
@@ -94,4 +91,9 @@ h2{
     background-color: rgb(255, 255, 255);
     width: 33%;
     display: inline;
+  }
+
+  .box{
+    box-shadow: inset;
+    background-color: white;
   }
