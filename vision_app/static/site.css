@@ -3,9 +3,17 @@
 #task-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-
-
+    background-color: rgba(49, 47, 47, 0.998);
+    text-transform:uppercase;    
+    text-decoration-color: rgb(255, 255, 255);
+    color:rgb(255, 255, 255);
 }
+
+#task-list {
+    margin-top: 0;
+}
+
+
 
 body{ 
     background: url("https://cdn.discordapp.com/attachments/898010157253025862/1080730185898414080/mangrovebackground2.jpg");
@@ -17,6 +25,7 @@ body{
     justify-content: center;
     height: 100vh;
     margin: 0;
+    
 }
 
 
@@ -35,6 +44,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px
+    
 }
 .middle{
     text-align: center;
@@ -42,6 +52,7 @@ h1 {
     transform: scale(1);
     position: absolute;
     font-size: 1rem;
+    
 }
 
 .message {
@@ -55,6 +66,7 @@ h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
     padding: 15px 10px 15px 20px;
+    
 }
 
 .navbar a {
@@ -86,6 +98,7 @@ h1 {
     transform-origin: left;
     transition: scale 0.25s;
 }
+
 .navbar-item:hover::before {
     scale: 1;
 }
@@ -93,6 +106,7 @@ h1 {
 .body-content {
     padding: 5px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 .container {
     position: absolute;

@@ -6,6 +6,8 @@ from vision_app.models import User, Item
 
 @app.route("/")
 def home():
+    if 'user' in session.keys():
+        return redirect(url_for("checklist"))
     return render_template("home.html")
 
 @app.route("/about/")
@@ -75,9 +77,6 @@ def logout_user():
     session.pop('user', None)
     return redirect(url_for('home')) 
 
-@app.route("/api/data")
-def get_data():
-    return app.send_static_file("data.json")
 
 @app.route("/checklist/add_task", methods=['POST'])
 def add_task():
@@ -103,7 +102,10 @@ def add_task():
 
 @app.route("/calendar/")
 def calendar():
-    user_name = None
+    user_id = None
     if session['user']:
-        user_name = session['user']
+        user_id = session['user']
+        tasks = Item.query.filter_by(user_id=user_id)
+        return render_template('calendar.html', events = webapp.events ) 
     return render_template("calendar.html", events = webapp.events)
+

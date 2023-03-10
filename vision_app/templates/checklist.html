@@ -56,11 +56,13 @@
     </form>
     <div id="task-list">
       <p>Task</p><p>Course Category</p><p>Course Weight</p><p>Due Date</p>
+
       {% for task in tasks %}
 
           <p>{{task.task}}</p><p>{{task.course_category}}</p><p>{{task.course_weight}}</p><p>{{task.date}}</p>
 
       {% endfor %}
+      
     </div>
     
 </html>

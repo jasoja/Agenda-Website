@@ -28,5 +28,11 @@ events = [
     },    {
         'todo' : 'Coding',
         'date' : '2023-02-14'
+    },  {
+        'todo' : 'Sprint Review',
+        'date' : '2023-03-10'
+    },  {
+        'todo' : 'MATH122-QUIZ ',
+        'date' : '2023-03-09'
     },
 ]
