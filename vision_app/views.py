@@ -12,12 +12,14 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route("/checklist/")
+@app.route("/checklist/", methods = ['POST', 'GET'])
 def checklist():
-    user_name = None
+    user_id = None
     if session['user']:
-        user_name = session['user']
-    return render_template("checklist.html")
+        user_id = session['user']
+        tasks = Item.query.filter_by(user_id=user_id)
+        return render_template('checklist.html', tasks=tasks)
+    return render_template('checklist.html')
 
 @app.route("/combine/")
 def combine():
@@ -43,6 +45,16 @@ def register_user():
     db.session.commit()
     flash("Successfully registered, please login.")
     return redirect(url_for('home')) 
+
+@app.route('/validate-user-registration', methods=['POST'])
+def validate_user_registration():
+    if request.method == "POST":
+        email_address = request.get_json()['email'] 
+        user = User.query.filter_by(email=email_address).first()
+        if user:
+            return jsonify({"user_exists": "true"})
+        else:
+            return jsonify({"user_exists": "false"})
 
 @app.route('/home/login-user', methods=['POST'])
 def login_user():
@@ -88,16 +100,6 @@ def add_task():
     else:
         flash('Task already exists')
         return redirect(url_for('checklist'))
-
-@app.route('/validate-user-registration', methods=['POST'])
-def validate_user_registration():
-    if request.method == "POST":
-        email_address = request.get_json()['email'] 
-        user = User.query.filter_by(email=email_address).first()
-        if user:
-            return jsonify({"user_exists": "true"})
-        else:
-            return jsonify({"user_exists": "false"})
 
 @app.route("/calendar/")
 def calendar():

@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
+#task-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+
+}
+
 body{ 
     background: url("https://cdn.discordapp.com/attachments/898010157253025862/1080730185898414080/mangrovebackground2.jpg");
     background-size:contain;
