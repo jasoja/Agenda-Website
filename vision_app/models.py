@@ -4,7 +4,8 @@ from datetime import datetime
 import sqlalchemy
 
 class User(db.Model):
-    email = db.Column(db.String(120), index=True, unique = True,primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(120), index=True, unique = True, nullable=False)
     name = db.Column(db.String(120),  nullable=False)
     password_hash = db.Column(db.String(128))
     items = db.relationship('Item', backref='user',lazy=True)
@@ -16,8 +17,9 @@ class User(db.Model):
         return check_password_hash(self.password_hash, password)
 
 class Item(db.Model):
-    user_name = db.Column(db.String, db.ForeignKey('user.name')) # access the user's unique name
-    task = db.Column(db.String(128), primary_key=True) # task list name
-    course_category = db.Column(db.String(128)) # task course name
-    course_weight = db.Column(db.String(128)) # task course weight % (convert via python code?)
-    date = db.Column(db.DateTime(timezone=True), default=datetime.now) # the date (1914-12-20 21:29:84)
+    id = db.Column(db.Integer, primary_key=True, nullable = False)
+    task = db.Column(db.String(128), nullable=False) # task list name
+    course_category = db.Column(db.String(128), nullable = False) # task course name
+    course_weight = db.Column(db.String(128), nullable = False) # task course weight % (convert via python code?)
+    date = db.Column(db.DateTime(timezone=True), default=datetime.now) # the date (specific formatting)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id')) # access the user's unique id

@@ -41,7 +41,8 @@ def register_user():
     user.set_password(form['password'])
     db.session.add(user)   
     db.session.commit()
-    return "Successfully registered"
+    flash("Successfully registered, please login.")
+    return redirect(url_for('home')) 
 
 @app.route('/home/login-user', methods=['POST'])
 def login_user():
@@ -51,7 +52,7 @@ def login_user():
         flash("User doesn't exist")
         return redirect(url_for('home')) 
     if user.check_password(form['password']):
-        session['user'] = user.name 
+        session['user'] = user.id 
         return redirect(url_for('calendar')) 
     else:  
         flash('Password was incorrect')
@@ -69,19 +70,21 @@ def get_data():
 @app.route("/checklist/add_task", methods=['POST'])
 def add_task():
     form = request.form
-    task_name = form['task_name']
-    task = Item.query.filter_by(task=task_name).first()
-    if not task:
+    taskItem = Item.query.filter_by(task=form['task_name']).first()
+    if not taskItem:
         taskItem = Item(
-            task = task_name,
+            task = form['task_name'],
             course_category=form['course_category'],
             course_weight=form['course_weight'],
-            date= datetime.strptime(form['due_date'], '%m/%d/%y %H:%M:%S')
+            date= datetime.strptime(form['due_date'], '%m/%d/%y %H:%M:%S'),
+            user_id = session['user']
         )
+
         db.session.add(taskItem)
         db.session.commit()
         flash('Task successfully added to check list')
         return redirect(url_for('checklist'))
+
     else:
         flash('Task already exists')
         return redirect(url_for('checklist'))
