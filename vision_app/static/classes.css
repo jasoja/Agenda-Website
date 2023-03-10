@@ -14,13 +14,14 @@
 
 .upcoming{
     float: right;
-    width: 35%;
-    border: 1px;
-    border-radius: 4px;
-    background-color: rgb(131, 115, 154);
-    /* margin-right: 100px; */
+    width: 20%;
+    /* border: 4px solid rgb(105, 124, 95);
+    border-radius: 4px; */
+    /* background-color: rgb(131, 115, 154); */
+    margin-right: 50px;
+    margin-top: 40px;
     padding: 20px;
-    height: 100%;
+    /* height: 100%; */
 }
 
 .hw{
