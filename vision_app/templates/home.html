@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/site.css">
     <link rel="stylesheet" href="/static/inputs.css">
-    <link rel="stylesheet" href="/static/buttons.css">
     <link rel="stylesheet" href="/static/dropdown.css">
     <link rel="stylesheet" href="/static/login2.css">
     <link rel="stylesheet" href="/static/navbar2.css">
@@ -32,10 +31,12 @@
     }
     </style>
 </head>
-<header>
+
+
+<body>
     <div class="navbar">
         <div class="topnav-right">
-            <a href="{{ url_for('home') }}" class="navbar-brand" style="display: flex; justify-content: center;align-items: center;" >Home</a>
+            <a href="{{ url_for('home') }}" class="navbar-brand" >Home</a>
         </div>
         <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
         <div id="mySidepanel" class="sidepanel">
@@ -52,8 +53,6 @@
             </div>
         </div>
     </div>
-</header>
-<body>
 
     <form class="login2">
         <h1>Welcome to Mangrove</h1>   
