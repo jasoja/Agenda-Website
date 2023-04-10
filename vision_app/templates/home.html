@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="/static/buttons.css">
     <link rel="stylesheet" href="/static/dropdown.css">
     <link rel="stylesheet" href="/static/login2.css">
+    <link rel="stylesheet" href="/static/navbar2.css">
+
+
     <script src='/static/position.js'></script>
+    <script src='/static/burgermenu.js'></script>
     <title>Login</title>
     <style>
         input[type=submit] {
@@ -37,10 +41,16 @@
     {% endif %}
     {% endwith %}
     <div class="navbar">
-        <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
-        <a href="{{ url_for('about') }}" class="navbar-item">About</a>
-        <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
-    </div> 
+        <div class="topnav-right">
+            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
+        <div id="mySidepanel" class="sidepanel">
+            <a href="{{ url_for('home') }}" class="navbar-item">Home</a>
+            <a href="{{ url_for('about') }}" class="navbar-item">About</a>
+            <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
+        </div>
+    </div>
     </div>
     <form name='login-form'class="login2" action='/home/login-user' method='post'>
         <h1>Welcome to Mangrove</h1>   

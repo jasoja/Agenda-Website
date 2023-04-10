@@ -39,6 +39,7 @@
     animation: 3s slide-left;
     animation-fill-mode: forwards;  
   }
+  
   @keyframes slide-left {
   0% {left:0px; top:0px;}
   100% {left:-475px; top:0px;}

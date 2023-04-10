@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/static/site.css">
         <link rel="stylesheet" href="/static/inputs.css">
         <link rel="stylesheet" href="/static/buttons.css">
         <link rel="stylesheet" href="/static/dropdown.css">
-        <link rel="stylesheet" href="/static/login2.css">
+        <link rel="stylesheet" href="/static/navbar2.css">
+        <script src='/static/burgermenu.js'></script>
         <script src='/static/position.js'></script>
         <style>
           input[type=submit] {
@@ -36,12 +36,24 @@
       </ul>
   {% endif %}
   {% endwith %}
-    <div class="navbar">
-        <a href="{{ url_for('logout_user') }}" class="navbar-brand">Logout</a>
-        <a href="{{ url_for('calendar') }}" class="navbar-item">Calendar</a>
-        <a href="{{ url_for('checklist') }}" class="navbar-item">Checklist</a>
-      </div>
-  </div>
+  <div class="navbar">
+    <div class="topnav-right">
+        <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
+    <div id="mySidepanel" class="sidepanel">
+        <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
+        <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
+
+        <div class="dropdown">
+            <a class="dropbtn">Agenda</a>
+            <div class="dropdown-content">
+                <a href="{{ url_for('calendar') }}">Calendar</a>
+                <a href="{{ url_for('checklist') }}">Checklist</a>
+            </div>
+        </div>
+    </div>
+</div>
   
     <form name='add-task-form' action= "{{'add_task'}}" method='post'>
       <label> Task Name </label>

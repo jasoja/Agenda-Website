@@ -14,6 +14,14 @@ def home():
 def about():
     return render_template("about.html")
 
+@app.route("/classes/")
+def classes():
+    user_id = None
+    if session['user']:
+        user_id = session['user']
+        return render_template("classes.html")
+    return render_template("classes.html")
+
 @app.route("/checklist/", methods = ['POST', 'GET'])
 def checklist():
     user_id = None
