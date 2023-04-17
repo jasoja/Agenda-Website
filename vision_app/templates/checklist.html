@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="/static/navbar2.css">
         <script src='/static/burgermenu.js'></script>
         <script src='/static/position.js'></script>
+        <script src='/static/script2.js'></script>
     <style>
     input[type=submit] {
         font-family: "Asap", sans-serif;
@@ -79,6 +80,22 @@
           <p>{{task.task}}</p><p>{{task.course_category}}</p><p>{{task.course_weight}}</p><p>{{task.date}}</p>
 
       {% endfor %}
+      
+      <form>
+        
+        <span>
+            <label for="day">Day:</label>
+            <select name="day" id="day"></select>
+        </span>
+        <span>
+            <label for="month">Month:</label>
+            <select name="month" id="month"></select>
+        </span>
+        <span>
+            <label for="year">Year:</label>
+            <select name="year" id="year">Year:</select>
+        </span>
+    </form>
       
     </div>
     
