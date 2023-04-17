@@ -10,20 +10,24 @@
         <link rel="stylesheet" href="/static/navbar2.css">
         <script src='/static/burgermenu.js'></script>
         <script src='/static/position.js'></script>
-        <style>
-          input[type=submit] {
-          background-color: #5a4042;
-          border: none;
-          color: white;
-          padding: 16px 32px;
-          text-decoration: none;
-          margin: 4px 2px;
-          cursor: pointer;
-          border-radius: 12px;
-          transition: all 0.5s;
-          cursor: pointer;
-          }
-      </style>
+    <style>
+    input[type=submit] {
+        font-family: "Asap", sans-serif;
+        cursor: pointer;
+        color: #fff;
+        text-transform: uppercase;
+        width: 80px;
+        border: 0;
+        padding: 10px 0;
+        margin-top: 10px;
+        margin-left: -5px;
+        border-radius: 5px;
+        background-color: #534f44;
+        -webkit-transition: background-color 300ms;
+        -moz-transition: background-color 300ms;
+        transition: background-color 300ms;
+    }
+    </style>
         <title>Checklist</title>
 </head>
 <body>
@@ -42,8 +46,9 @@
     </div>
     <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
     <div id="mySidepanel" class="sidepanel">
-        <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
+        <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
         <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
+        <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
 
         <div class="dropdown">
             <a class="dropbtn">Agenda</a>

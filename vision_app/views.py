@@ -14,6 +14,10 @@ def home():
 def about():
     return render_template("about.html")
 
+@app.route("/about2/")
+def about2():
+    return render_template("aboutLoggedIn.html")
+
 @app.route("/classes/")
 def classes():
     user_id = None
