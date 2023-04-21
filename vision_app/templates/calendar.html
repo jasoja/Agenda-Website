@@ -48,10 +48,10 @@
                 let calendar = new FullCalendar.Calendar
                 (calendarElement, {
                     events : [
-                        {% for event in events %}
+                        {% for task in tasks %}
                         { 
-                            title : '{{event.todo}}',
-                            start : '{{event.date}}',
+                            title : '{{task.task}}',
+                            start : '{{task.date}}',
                             
                         },
                         {% endfor %}
