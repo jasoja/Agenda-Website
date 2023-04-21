@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="/static/site.css">
         <link rel="stylesheet" href="/static/classes.css">
         <link rel="stylesheet" href="/static/navbar2.css">
+        <link rel="stylesheet" href="/static/inputs.css">
+
 
         <script src='/static/position.js'></script>
         <script src='/static/burgermenu.js'></script>
@@ -48,6 +50,29 @@
                     </div>
             <!-- </div> -->
         </div>
+        
+        <div id="task-list">
+        {% for task in tasks %}
+            <button class = "collapsible" style ="background-color:rgb(236, 236, 236); color:rgb(0, 0, 0);">{{task.course_category}}</button>
+            <div class="content">
+                <div class = "hw">
+                <h2> Homework</h2>
+                    <p>
+                    <div class = "assignments">
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Read chapters 1-2</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Essay draft</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Peer Review</label><br>
+                    </div>
+                    </p>
+                </div>
+                </div>
+        {% endfor %}
+        </div>
+        
+
 
         <button class = "collapsible" style ="background-color:rgb(236, 236, 236); color:rgb(0, 0, 0);">English</button>
         <div class="content">
