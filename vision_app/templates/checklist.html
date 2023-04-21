@@ -46,7 +46,7 @@
     </div>
     <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
     <div id="mySidepanel" class="sidepanel">
-        <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
+        <a href="{{ url_for('about') }}" class="navbar-item">About</a>
         <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
         <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
 
@@ -69,34 +69,28 @@
       <input name="course_weight" type="text" required>
       <label> Due Date (MM/DD/YY HH:MM:SS) </label>
       <input name="due_date" type="text" required>
-      <input type ="submit" value="Add Task">
-    </form>
-
-    <div id="task-list">
-      <p>Task</p><p>Course Category</p><p>Course Weight</p><p>Due Date</p>
-
-      {% for task in tasks %}
-
-          <p>{{task.task}}</p><p>{{task.course_category}}</p><p>{{task.course_weight}}</p><p>{{task.date}}</p>
-
-      {% endfor %}
-
-      <form>
-        
-        <span>
-            <label for="day">Day:</label>
-            <select name="day" id="day"></select>
+      <span>
+        <label for="day">Day:</label>
+        <select name="day" id="day"></select>
         </span>
         <span>
-            <label for="month">Month:</label>
-            <select name="month" id="month"></select>
+        <label for="month">Month:</label>
+        <select name="month" id="month"></select>
         </span>
         <span>
-            <label for="year">Year:</label>
-            <select name="year" id="year">Year:</select>
+        <label for="year">Year:</label>
+        <select name="year" id="year">Year:</select>
         </span>
+        <input type ="submit" value="Add Task">
     </form>
     <script src='/static/script2.js'></script>
+
+    <div id="task-list">
+      <p>Task</p><p>Course Category</p><p>Course Weight</p><p>Due Date</p><p>Delete</p>
+
+      {% for task in tasks %}
+          <p>{{task.task}}</p><p>{{task.course_category}}</p><p>{{task.course_weight}}</p><p>{{task.date}}</p><a href="{{url_for('remove_task', task_name = task.task)}}">Delete</a>
+      {% endfor %}
       
     </div>
     
