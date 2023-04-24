@@ -85,8 +85,8 @@ def logout_user():
 def add_task():
 	form = request.form
 	taskItem = Item.query.filter_by(task=form['task_name']).first()
+	date_str = form['month'] + '/' + form['day'] + '/' + form['year']
 	if not taskItem:
-		
 		taskItem = Item(
 			task = form['task_name'],
 			course_category=form['course_category'],
