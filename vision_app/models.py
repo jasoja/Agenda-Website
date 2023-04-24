@@ -23,3 +23,6 @@ class Item(db.Model):
     course_weight = db.Column(db.String(128), nullable = False) # task course weight % (convert via python code?)
     date = db.Column(db.DateTime(timezone=True), default=datetime.now) # the date (specific formatting)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) # access the user's unique id
+
+    def course_category_to_string(self):
+        pass

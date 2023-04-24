@@ -8,35 +8,25 @@
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
         <link rel="stylesheet" href="/static/dropdown.css">
         <link rel="stylesheet" href="/static/navbar2.css">
-        <script src='/static/burgermenu.js'></script>
-        <script src='/static/position.js'></script>
-
+    <script src='/static/burgermenu.js'></script>
+    <script src='/static/position.js'></script> 
     </head>
 
     <body>
         <div class="navbar">
-            <div class="topnav-right">
-                <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
-            </div>
-            <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
-            <div id="mySidepanel" class="sidepanel">
-                <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
-                <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
-                <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
-        
-                <div class="dropdown">
-                    <a class="dropbtn">Agenda</a>
-                    <div class="dropdown-content">
-                        <a href="{{ url_for('calendar') }}">Calendar</a>
-                        <a href="{{ url_for('checklist') }}">Checklist</a>
-                    </div>
-                </div>
-            </div>
+            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+            <a href="{{ url_for('about') }}" class="navbar-item">About</a>
+            <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
+            <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
+            <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
+            <div class="dropdown">
+                <a href="{{ url_for('calendar') }}" class="dropbtn">Agenda</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('calendar') }}">Calendar</a>
+                    <a href="{{ url_for('checklist') }}">Checklist</a>
+            </div> 
+        </a>
         </div>
-
-            
-            </a>
-        
         </div>
 
         <div class="calendarcss">
@@ -66,6 +56,7 @@
                 <p>&copy; Mangrove 2023</p>
             </footer>
         </div>
+    </div>
     </div>
     </body>
 </html>
