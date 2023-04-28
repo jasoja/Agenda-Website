@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="/static/dropdown.css">
+        <link rel="stylesheet" href="/static/site.css">
+        <link rel="stylesheet" href="/static/classes.css">
+        <link rel="stylesheet" href="/static/navbar2.css">
+
+        <script src='/static/position.js'></script>
+        <script src='/static/burgermenu.js'></script>
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="topnav-right">
+                <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+            </div>
+            <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
+            <div id="mySidepanel" class="sidepanel">
+                <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
+                <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
+                <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
+        
+                <div class="dropdown">
+                    <a class="dropbtn">Agenda</a>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('calendar') }}">Calendar</a>
+                        <a href="{{ url_for('checklist') }}">Checklist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "upcoming">
+            <!-- <div class = "card"> -->
+                <h1> Upcoming Assignments</h1>
+                    <div class = "assignments">
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Read chapters 1-2</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Essay draft</label><br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+            <!-- </div> -->
+        </div>
+
+        <button class = "collapsible" style ="background-color:rgb(236, 236, 236); color:rgb(0, 0, 0);">English</button>
+        <div class="content">
+            <div class = "hw">
+                <h2> Homework</h2>
+                <p>
+                    <div class = "assignments">
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Read chapters 1-2</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Essay draft</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Peer Review</label><br>
+                    </div>
+                </p>
+            </div>
+
+            <div class = "hw">
+                <h2> Tests</h2>
+                <p>
+                    <div class = "assignments">
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Quiz on reading</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Midterm</label><br>
+                    </div>
+                </p>
+            </div>
+
+            <div class = "hw">
+                <h2> Projects</h2>
+                <p>
+                    <div class = "assignments">
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Quiz on reading</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Midterm</label><br>
+                    </div>
+                </p>
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <button class = "collapsible" style ="background-color:rgb(236, 236, 236); color:rgb(0, 0, 0);">Calculus</button>
+        <div class="content">
+            <div class = "hw">
+                <h2> Homework</h2>
+                <p>
+                    <div class = "assignments">
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Read chapters 1-2</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Essay draft</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Peer Review</label><br>
+                    </div>
+                </p>
+            </div>
+
+            <div class = "hw">
+                <h2> Tests</h2>
+                <p>
+                    <div class = "assignments">
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Midterm</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Final</label><br>
+                    </div>
+                </p>
+            </div>
+
+            <div class = "hw">
+                <h2> Projects</h2>
+                <p>
+                    <div class = "assignments">
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Quiz on reading</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Midterm</label><br>
+                    </div>
+                </p>
+            </div>
+
+        </div>
+
+
+        <button class = "collapsible" style ="background-color:rgb(236, 236, 236); color:black(0, 0, 0);">Physics</button>
+        <div class="content">
+            <div class = "hw">
+                <h2> Homework</h2>
+                <p>
+                    <div class = "assignments">
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Read chapters 1-2</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Essay draft</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Peer Review</label><br>
+                    </div>
+                </p>
+            </div>
+
+            <div class = "hw">
+                <h2> Tests</h2>
+                <p>
+                    <div class = "assignments">
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Midterm</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Final</label><br>
+                    </div>
+                </p>
+            </div>
+
+            <div class = "hw">
+                <h2> Projects</h2>
+                <p>
+                    <div class = "assignments">
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Quiz on reading</label><br>
+                        <input type="checkbox" id="hw1" name="hw1" value="assignment">
+                        <label for="hw1"> Midterm</label><br>
+                    </div>
+                </p>
+            </div>
+
+        </div>
+        <label for="colorpicker">Color Picker:</label>
+        <input type="color" id="colorpicker" value="#0000ff">
+    </body>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+        
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+              content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+         } 
+        });
+    }
+</script>
+
+</html>
