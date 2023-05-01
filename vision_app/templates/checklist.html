@@ -21,7 +21,7 @@
         border: 0;
         padding: 10px 0;
         margin-top: 10px;
-        margin-left: 30px;
+        margin-left: -5px;
         border-radius: 5px;
         background-color: #534f44;
         -webkit-transition: background-color 300ms;
@@ -60,10 +60,14 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 
 <br>
 
 <div class="backgroundbox">
+=======
+  
+>>>>>>> d067812322bbe0499e8def04d019d1548f235192
     <form name='add-task-form' action= "{{'add_task'}}" method='post'>
       <label> Task Name </label>
       <input name="task_name" type="text" required>
@@ -88,6 +92,7 @@
         <label for="year">Year:</label>
         <select name="year" id="year">Year:</select>
         </span>
+<<<<<<< HEAD
      <input type="text" class="time-pickable" readonly>
     <script src='/static/script3.js'></script>
     <input type ="submit" value="Add Task">
@@ -96,6 +101,12 @@
 
     <br>
 
+=======
+        <input type ="submit" value="Add Task">
+    </form>
+    <script src='/static/script2.js'></script>
+
+>>>>>>> d067812322bbe0499e8def04d019d1548f235192
     <div id="task-list">
       <p>Task</p><p>Course Category</p><p>Course Weight</p><p>Due Date</p><p>Delete</p>
 
@@ -104,5 +115,5 @@
       {% endfor %}
       
     </div>
-</div>
+    
 </html>
