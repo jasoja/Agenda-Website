@@ -92,6 +92,7 @@ def logout_user():
 
 @app.route("/checklist/add_task", methods=['POST'])
 def add_task():
+<<<<<<< HEAD
     form = request.form
     taskItem = Item.query.filter_by(task=form['task_name']).first()
     if not taskItem:
@@ -102,6 +103,19 @@ def add_task():
             date= datetime.strptime(form['due_date'], '%m/%d/%y %H:%M:%S'),
             user_id = session['user']
         )
+=======
+	form = request.form
+	taskItem = Item.query.filter_by(task=form['task_name']).first()
+	date_str = form['month'] + '/' + form['day'] + '/' + form['year'] + '09:30:00'
+	if not taskItem:
+		taskItem = Item(
+			task = form['task_name'],
+			course_category=form['course_category'],
+			course_weight=form['course_weight'],
+			date= datetime.strptime(form['due_date'], '%m/%d/%y %H:%M:%S'),
+			user_id = session['user']
+		)
+>>>>>>> d2f0122fd620299c5a8923315364591e1352e6e8
 
         db.session.add(taskItem)
         db.session.commit()
