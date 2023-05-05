@@ -38,6 +38,7 @@
             </a>
         
         </div>
+
         <div class="calendarcss">
         <div id="calendar">
             <script>
@@ -47,10 +48,10 @@
                 let calendar = new FullCalendar.Calendar
                 (calendarElement, {
                     events : [
-                        {% for task in tasks %}
+                        {% for event in events %}
                         { 
-                            title : '{{task.task}}',
-                            start : '{{task.date}}',
+                            title : '{{event.todo}}',
+                            start : '{{event.date}}',
                             
                         },
                         {% endfor %}
@@ -66,7 +67,5 @@
             </footer>
         </div>
     </div>
-
-
     </body>
 </html>
