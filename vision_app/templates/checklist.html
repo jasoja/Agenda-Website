@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="/static/buttons.css">
         <link rel="stylesheet" href="/static/dropdown.css">
         <link rel="stylesheet" href="/static/navbar2.css">
-        <link rel="stylesheet" href="/static/checklist2.css">
         <script src='/static/burgermenu.js'></script>
         <script src='/static/position.js'></script>
     <style>
@@ -21,7 +20,7 @@
         border: 0;
         padding: 10px 0;
         margin-top: 10px;
-        margin-left: -5px;
+        margin-left: 30px;
         border-radius: 5px;
         background-color: #534f44;
         -webkit-transition: background-color 300ms;
@@ -47,7 +46,7 @@
     </div>
     <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
     <div id="mySidepanel" class="sidepanel">
-        <a href="{{ url_for('about') }}" class="navbar-item">About</a>
+        <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
         <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
         <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
 
@@ -60,14 +59,7 @@
         </div>
     </div>
 </div>
-
-<br>
-
-<div class="backgroundbox">
-<<<<<<< HEAD
-=======
   
->>>>>>> 8444f8bfe74db3661ebd59adf83f3ae0dc19ef3c
     <form name='add-task-form' action= "{{'add_task'}}" method='post'>
       <label> Task Name </label>
       <input name="task_name" type="text" required>
@@ -77,35 +69,34 @@
       <input name="course_weight" type="text" required>
       <label> Due Date (MM/DD/YY HH:MM:SS) </label>
       <input name="due_date" type="text" required>
-
-      <br>
-      
-      <span>
-        <label for="month">Month:</label>
-        <select name="month" id="month"></select>
-        </span>
-        <span>
-        <label for="day">Day:</label>
-        <select name="day" id="day"></select>
-        </span>
-        <span>
-        <label for="year">Year:</label>
-        <select name="year" id="year">Year:</select>
-        </span>
-     <input type="text" class="time-pickable" readonly>
-    <script src='/static/script3.js'></script>
-    <input type ="submit" value="Add Task">
+      <input type ="submit" value="Add Task">
     </form>
-    <script src='/static/script2.js'></script>
-
-    <br>
 
     <div id="task-list">
-      <p>Task</p><p>Course Category</p><p>Course Weight</p><p>Due Date</p><p>Delete</p>
+      <p>Task</p><p>Course Category</p><p>Course Weight</p><p>Due Date</p>
 
       {% for task in tasks %}
-          <p>{{task.task}}</p><p>{{task.course_category}}</p><p>{{task.course_weight}}</p><p>{{task.date}}</p><a href="{{url_for('remove_task', task_name = task.task)}}">Delete</a>
+
+          <p>{{task.task}}</p><p>{{task.course_category}}</p><p>{{task.course_weight}}</p><p>{{task.date}}</p>
+
       {% endfor %}
+
+      <form>
+        
+        <span>
+            <label for="day">Day:</label>
+            <select name="day" id="day"></select>
+        </span>
+        <span>
+            <label for="month">Month:</label>
+            <select name="month" id="month"></select>
+        </span>
+        <span>
+            <label for="year">Year:</label>
+            <select name="year" id="year">Year:</select>
+        </span>
+    </form>
+    <script src='/static/script2.js'></script>
       
     </div>
     
