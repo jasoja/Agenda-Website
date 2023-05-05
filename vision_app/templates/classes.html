@@ -32,7 +32,16 @@
                 </div>
             </div>
         </div>
-
+        
+        <div class = "bg">
+            <label for="colorpicker">Color Picker:</label>
+            <input type="color" id = "bg" onchange ="bgchange(this.value)">
+            <script>
+                function bgchange(val){
+                    document.body.style.background=val;
+                }
+            </script>
+        </div>
         <div class = "upcoming">
             <!-- <div class = "card"> -->
                 <h1> Upcoming Assignments</h1>
@@ -178,8 +187,8 @@
             </div>
 
         </div>
-        <label for="colorpicker">Color Picker:</label>
-        <input type="color" id="colorpicker" value="#0000ff">
+
+
     </body>
 
 <script>

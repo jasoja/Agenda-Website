@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="/static/dropdown.css">
+        <link rel="stylesheet" href="/static/site.css">
+        <link rel="stylesheet" href="/static/test.css">
+        <link rel="stylesheet" href="/static/navbar2.css">
+
+        <script src='/static/position.js'></script>
+        <script src='/static/burgermenu.js'></script>
+    </head>
+
+    <body>
+        <label for="color-picker">Background Color:</label>
+        <input type="color" id="color-picker" value="#ffffff">
+        
+        <script>
+            function setCustomBackground() {
+              var color = document.getElementById("color-picker").value;
+              document.body.style.backgroundColor = color;
+              document.body.classList.add("custom-background");
+              localStorage.setItem("background-color", color);
+            }
+
+            document.getElementById("color-picker").addEventListener("change", setCustomBackground);
+            var savedColor = localStorage.getItem("background-color");
+            if (savedColor) {
+                document.body.style.backgroundColor = savedColor;
+                document.body.classList.add("custom-background");
+            }
+
+          </script>
+
+    </body>
+
+</html>
