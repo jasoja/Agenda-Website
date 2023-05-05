@@ -66,8 +66,9 @@ function show(timePickable) {
 
 function buildPicker(timePickable) {
 	const picker = document.createElement("div");
-	const hourOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(numberToOption);
-	const minuteOptions = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55].map(numberToOption);
+	const hourOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23].map(numberToOption);
+	const minuteOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59].map(numberToOption);
+	const secondsOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59].map(numberToOption);
 
 	picker.classList.add("time-picker");
 	picker.innerHTML = `
@@ -78,9 +79,9 @@ function buildPicker(timePickable) {
 		<select class="time-picker__select">
 			${minuteOptions.join("")}
 		</select>
+		:
 		<select class="time-picker__select">
-			<option value="am">am</option>
-			<option value="pm">pm</option>
+			${secondsOptions.join("")}
 		</select>
 	`;
 
@@ -88,44 +89,43 @@ function buildPicker(timePickable) {
 
 	selects.hour.addEventListener("change", () => timePickable.value = getTimeStringFromPicker(picker));
 	selects.minute.addEventListener("change", () => timePickable.value = getTimeStringFromPicker(picker));
-	selects.meridiem.addEventListener("change", () => timePickable.value = getTimeStringFromPicker(picker));
+	selects.seconds.addEventListener("change", () => timePickable.value = getTimeStringFromPicker(picker));
 
 	if (timePickable.value) {
-		const { hour, minute, meridiem } = getTimePartsFromPickable(timePickable);
+		const { hour, minute, seconds } = getTimePartsFromPickable(timePickable);
 
 		selects.hour.value = hour;
 		selects.minute.value = minute;
-		selects.meridiem.value = meridiem;
+		selects.seconds.value = seconds;
 	}
 
 	return picker;
 }
 
 function getTimePartsFromPickable(timePickable) {
-	const pattern = /^(\d+):(\d+) (am|pm)$/;
-	const [hour, minute, meridiem] = Array.from(timePickable.value.match(pattern)).splice(1);
+	const [hour, minute, seconds] = Array.from(timePickable.value.match(pattern)).splice(1);
 
 	return {
 		hour,
 		minute,
-		meridiem
+		seconds
 	};
 }
 
 function getSelectsFromPicker(timePicker) {
-	const [hour, minute, meridiem] = timePicker.querySelectorAll(".time-picker__select");
+	const [hour, minute, seconds] = timePicker.querySelectorAll(".time-picker__select");
 
 	return {
 		hour,
 		minute,
-		meridiem
+		seconds
 	};
 }
 
 function getTimeStringFromPicker(timePicker) {
 	const selects = getSelectsFromPicker(timePicker);
 
-	return `${selects.hour.value}:${selects.minute.value} ${selects.meridiem.value}`;
+	return `${selects.hour.value}:${selects.minute.value}:${selects.seconds.value}`;
 }
 
 function numberToOption(number) {
