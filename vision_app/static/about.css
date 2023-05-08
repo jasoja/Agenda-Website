@@ -48,5 +48,6 @@
 .container .content h2,
 .container .content p
 {
+    backdrop-filter: blur(100px);
     transition: 0.5s;
 }
