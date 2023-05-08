@@ -119,11 +119,9 @@ h1 {
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     backdrop-filter: blur(100px);
     position: absolute;
-    top: 50%;
+    top: 375px;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 700px;
+    width: 600px;
   }
-  p {
-    backdrop-filter: blur(100px);
-  }
+
