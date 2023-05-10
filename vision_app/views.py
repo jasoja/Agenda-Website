@@ -26,9 +26,9 @@ def classes():
 		return render_template("classes.html")
 	return render_template("classes.html")
 
-@app.route("/combine/")
-def combine():
-	return render_template("combine.html")
+@app.route("/settings/")
+def settings():
+	return render_template("settings.html")
 
 @app.route("/login/")
 def login():
