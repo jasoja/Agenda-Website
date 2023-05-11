@@ -18,6 +18,7 @@
 body{ 
     background: url("https://cdn.discordapp.com/attachments/898010157253025862/1080730185898414080/mangrovebackground2.jpg");
     background-size:contain;
+    background-color: white;
     color: #444;
     font-family: 'Poppins', sans-serif;
     flex-direction: column;

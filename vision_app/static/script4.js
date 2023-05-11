@@ -1,8 +1,13 @@
-const colorPicker = document.getElementById("colorPicker");
-const body = document.body;
-const html = document.documentElement;
+function bgchange(val) {
+  document.body.style.background = val;
+  localStorage.setItem('backgroundColor', val);
+}
 
-colorPicker.addEventListener("input", function() {
-  body.style.backgroundColor = colorPicker.value;
-  html.style.backgroundColor = colorPicker.value;
+// Retrieve the color from local storage on page load
+window.addEventListener('load', function() {
+  const savedColor = localStorage.getItem('backgroundColor');
+  if (savedColor) {
+    document.body.style.background = savedColor;
+  }
 });
+
