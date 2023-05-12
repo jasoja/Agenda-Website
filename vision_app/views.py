@@ -29,9 +29,9 @@ def classes():
 		return render_template("classes.html")
 	return render_template("classes.html")
 
-@app.route("/combine/")
-def combine():
-	return render_template("combine.html")
+@app.route("/settings/")
+def settings():
+	return render_template("settings.html")
 
 @app.route("/login/")
 def login():
@@ -88,13 +88,13 @@ def logout_user():
 def add_task():
 	form = request.form
 	taskItem = Item.query.filter_by(task=form['task_name']).first()
-	date_str = form['month'] + '/' + form['day'] + '/' + form['year'] + '09:30:00'
+	date_str = form['month'] + '/' + form['day'] + '/' + form['year'][2:] + ' ' + form['time'];
 	if not taskItem:
 		taskItem = Item(
 			task = form['task_name'],
 			course_category=form['course_category'],
-			course_weight=form['course_weight'],
-			date= datetime.strptime(form['due_date'], '%m/%d/%y %H:%M:%S'),
+			course_weight=0,
+			date= datetime.strptime(date_str, '%m/%d/%y %H:%M:%S'),
 			user_id = session['user']
 		)
 
