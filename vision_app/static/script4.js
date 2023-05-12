@@ -10,4 +10,3 @@ window.addEventListener('load', function() {
     document.body.style.background = savedColor;
   }
 });
-

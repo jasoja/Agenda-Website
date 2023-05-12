@@ -1,6 +1,16 @@
-html, body {
-    background-color: white;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+.options{
+    margin-left: 30px;
+    margin-top: 5%
+}
+
+h1{
+    font-size: 130%;
+    float: left;
+}
+
+.picker{
+    float: left;
+    display: inline;
+    margin-left: 5%;
+    margin-top: 10px;
 }
