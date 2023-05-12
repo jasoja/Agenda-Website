@@ -119,3 +119,89 @@
       padding: 10px 15px;
       border: none;
     }
+
+    .event-title {
+      color: #ffffff;
+      background-color: #007bff;
+      border-radius: 3px;
+      padding: 5px;
+  }
+
+  /* Add this to your CSS file */
+.fc-event {
+  background-color: #000000;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.fc-event:hover {
+  background-color: #0056b3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fc-event:focus {
+  outline: none;
+}
+
+.fc-event-title {
+  z-index: 1; /* Set a higher z-index value */
+  position: relative; /* Adjust the positioning */
+  /* Add any additional necessary styles to ensure proper visibility */
+}
+
+/* CSS for the tooltips */
+[data-toggle="tooltip"] {
+  position: relative;
+  cursor: pointer;
+}
+/* Custom CSS for tooltips */
+[title] {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+[title]::after {
+  content: attr(title);
+  visibility: hidden;
+  width: 120px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+[title]:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.custom-event {
+  position: relative;
+}
+
+.custom-event:hover::before {
+  content: attr(data-title);
+  position: absolute;
+  top: -2em;
+  left: 0;
+  background-color: #f9f9f9;
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 1;
+}

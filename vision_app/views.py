@@ -113,8 +113,8 @@ def calendar():
 	if session['user']:
 		user_id = session['user']
 		tasks = Item.query.filter_by(user_id=user_id)
-		return render_template('calendar.html', events = webapp.events, tasks=tasks) 
-	return render_template("calendar.html", events = webapp.events, tasks=tasks)
+		return render_template('calendar.html',  tasks=tasks) 
+	return render_template("calendar.html", tasks=tasks)
 
 @app.route("/checklist/", methods = ['POST', 'GET'])
 def checklist():
