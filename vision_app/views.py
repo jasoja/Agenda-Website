@@ -17,6 +17,9 @@ def about():
 @app.route("/about2/")
 def about2():
 	return render_template("aboutLoggedIn.html")
+@app.route("/focus/")
+def focus():
+	return render_template("focus.html")
 
 @app.route("/classes/")
 def classes():
