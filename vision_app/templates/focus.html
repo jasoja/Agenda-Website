@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/site.css">
+    <link rel="stylesheet" href="/static/inputs.css">
+    <link rel="stylesheet" href="/static/dropdown.css">
+    <link rel="stylesheet" href="/static/login2.css">
+    <link rel="stylesheet" href="/static/navbar2.css">
+    <link rel="stylesheet" href="/static/about.css">
+
+
+    <script src='/static/position.js'></script>
+    <script src='/static/burgermenu.js'></script>
+    <title>Login</title>
+    <style>
+            p {text-align: center}
+            p {font-size: 28px}
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="topnav-right">
+            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
+        <div id="mySidepanel" class="sidepanel">
+            <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
+            <a href="{{ url_for('focus') }}" class="navbar-item">Focus</a>
+            <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
+            <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
+    
+            <div class="dropdown">
+                <a class="dropbtn">Agenda</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('calendar') }}">Calendar</a>
+                    <a href="{{ url_for('checklist') }}">Checklist</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div> 
+    <br><br><br><br><br><br><br><br>
+    
+
+    <p id="demo"></p>
+
+<!-- Add a button with id="reset" to your HTML -->
+<button id="reset">Reset Timer</button>
+
+<script>
+  var countDownDate = new Date().getTime() + (25 * 60 * 1000);
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+
+  // Add an event listener to the reset button
+  document.getElementById("reset").addEventListener("click", function() {
+    // Reset the countDownDate to the current time plus 25 minutes
+    countDownDate = new Date().getTime() + (25 * 60 * 1000);
+  });
+</script>
+    <div>
+    </div>
+      <script>
+        let buttons = document.querySelector('.buttons')
+        ;
+        let btn = buttons.querySelectorAll('.btn');
+        for (var i = 0; i < btn.length; i++){
+            btn[i].addEventListener('click', function(){
+                let current = document.getElementsByClassName('active');
+                current[0].className = current[0].className.replace("active", "");
+                this.className += " active";
+            })
+        }
+      </script>
+      
+</body>
+
+</html>
+
+

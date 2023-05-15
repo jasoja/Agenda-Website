@@ -32,6 +32,7 @@
         <title>Checklist</title>
 </head>
 <body>
+    <script src ='/static/script4.js'></script>
   {% with messages = get_flashed_messages() %}
   {% if messages %}
       <ul class="flashes">
@@ -48,7 +49,9 @@
     <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
     <div id="mySidepanel" class="sidepanel">
         <a href="{{ url_for('about') }}" class="navbar-item">About</a>
+        <a href="{{ url_for('focus') }}" class="navbar-item">Focus</a>
         <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
+        <a href="{{ url_for('settings') }}" class="navbar-item">Settings</a>
         <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
 
         <div class="dropdown">
@@ -68,12 +71,9 @@
     <form name='add-task-form' action= "{{'add_task'}}" method='post'>
       <label> Task Name </label>
       <input name="task_name" type="text" required>
-      <label> Course Category </label>
+      <label> Description </label>
       <input name="course_category" type="text" required>
-      <label> Course Weight </label>
-      <input name="course_weight" type="text" required>
-      <label> Due Date (MM/DD/YY HH:MM:SS) </label>
-      <input name="due_date" type="text" required>
+
 
       <br>
       
@@ -98,10 +98,10 @@
     <br>
 
     <div id="task-list">
-      <p>Task</p><p>Course Category</p><p>Course Weight</p><p>Due Date</p><p>Delete</p>
+      <p>Task</p><p>Description</p><p>Due Date</p><p>Delete</p>
 
       {% for task in tasks %}
-          <p>{{task.task}}</p><p>{{task.course_category}}</p><p>{{task.course_weight}}</p><p>{{task.date}}</p><a href="{{url_for('remove_task', task_name = task.task)}}">Delete</a>
+          <p>{{task.task}}</p><p>{{task.course_category}}</p><p>{{task.date}}</p><a href="{{url_for('remove_task', task_name = task.task)}}">Delete</a>
       {% endfor %}
       
     </div>

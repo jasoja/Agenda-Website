@@ -7,9 +7,10 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.css" />
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
         <link rel="stylesheet" href="/static/dropdown.css">
-        <link rel="stylesheet" href="/static/navbar2.css">
         <script src='/static/burgermenu.js'></script>
         <script src='/static/position.js'></script>
+        <link rel="stylesheet" href="/static/navbar2.css">
+
 
     </head>
 
@@ -21,7 +22,10 @@
             <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
             <div id="mySidepanel" class="sidepanel">
                 <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
+                <a href="{{ url_for('focus') }}" class="navbar-item">Focus</a>
                 <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
+                <a href="{{ url_for('settings') }}" class="navbar-item">Settings</a>
+
                 <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
         
                 <div class="dropdown">
@@ -42,25 +46,43 @@
         <div class="calendarcss">
         <div id="calendar">
             <script>
-                let calendarElement = document.getElementById
-                ('calendar');
+                document.addEventListener('DOMContentLoaded', function() {
+                    let calendarElement = document.getElementById('calendar');
+                
+                    let calendar = new FullCalendar.Calendar(calendarElement, {
+                        
+                        events: [
+                            {% for task in tasks %}
+                            { 
+                                title: '{{ task.task }}',
+                                start: '{{ task.date }}',
+                                backgroundColor: getRandomColor(), // Assign a random color to each event
+                                classNames: ['custom-event'] // Add a custom CSS class to the event
 
-                let calendar = new FullCalendar.Calendar
-                (calendarElement, {
-                    events : [
-                        {% for event in events %}
-                        { 
-                            title : '{{event.todo}}',
-                            start : '{{event.date}}',
-                            
-                        },
-                        {% endfor %}
-                    ]
-                    }  
-                );
+                            },
+                            {% endfor %}
+                        ],
+                        
+                    });
+                
+                    calendar.render();
+                    // Enable tooltips
+                    $('[data-toggle="tooltip"]').tooltip();
+                    
+                    function getRandomColor() {
+                        // Generate a random color in hexadecimal format
+                        const letters = '0123456789ABCDEF';
+                        let color = '#';
+                        for (let i = 0; i < 6; i++) {
+                            color += letters[Math.floor(Math.random() * 16)];
+                        }
+                        return color;
+                    }
+                
 
-                calendar.render();
-            </script>
+                });
+                </script>
+                
             <hr/>
             <footer>
                 <p>&copy; Mangrove 2023</p>

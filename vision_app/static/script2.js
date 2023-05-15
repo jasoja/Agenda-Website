@@ -58,8 +58,8 @@ function populateDays(month){
 }
 
 function populateYears(){
-    let year = new Date().getFullYear()%100;
-    for(let i = 0; i < 1; i++){
+    let year = new Date().getFullYear();
+    for(let i = 0; i < 9; i++){
         const option = document.createElement("option");
         option.textContent = year + i;
         yearSelect.appendChild(option);

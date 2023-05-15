@@ -17,6 +17,9 @@ def about():
 @app.route("/about2/")
 def about2():
 	return render_template("aboutLoggedIn.html")
+@app.route("/focus/")
+def focus():
+	return render_template("focus.html")
 
 @app.route("/classes/")
 def classes():
@@ -26,9 +29,9 @@ def classes():
 		return render_template("classes.html")
 	return render_template("classes.html")
 
-@app.route("/combine/")
-def combine():
-	return render_template("combine.html")
+@app.route("/settings/")
+def settings():
+	return render_template("settings.html")
 
 @app.route("/login/")
 def login():
@@ -85,13 +88,13 @@ def logout_user():
 def add_task():
 	form = request.form
 	taskItem = Item.query.filter_by(task=form['task_name']).first()
-	date_str = form['month'] + '/' + form['day'] + '/' + form['year'] + '09:30:00'
+	date_str = form['month'] + '/' + form['day'] + '/' + form['year'][2:] + ' ' + form['time'];
 	if not taskItem:
 		taskItem = Item(
 			task = form['task_name'],
 			course_category=form['course_category'],
-			course_weight=form['course_weight'],
-			date= datetime.strptime(form['due_date'], '%m/%d/%y %H:%M:%S'),
+			course_weight=0,
+			date= datetime.strptime(date_str, '%m/%d/%y %H:%M:%S'),
 			user_id = session['user']
 		)
 
@@ -110,8 +113,8 @@ def calendar():
 	if session['user']:
 		user_id = session['user']
 		tasks = Item.query.filter_by(user_id=user_id)
-		return render_template('calendar.html', events = webapp.events, tasks=tasks) 
-	return render_template("calendar.html", events = webapp.events, tasks=tasks)
+		return render_template('calendar.html',  tasks=tasks) 
+	return render_template("calendar.html", tasks=tasks)
 
 @app.route("/checklist/", methods = ['POST', 'GET'])
 def checklist():

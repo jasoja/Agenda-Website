@@ -12,9 +12,14 @@
 
         <script src='/static/position.js'></script>
         <script src='/static/burgermenu.js'></script>
+        <script src ='/static/script4.js'></script>
+
+
     </head>
 
     <body>
+        <script src ='/static/script4.js'></script>
+
         <div class="navbar">
             <div class="topnav-right">
                 <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
@@ -22,9 +27,11 @@
             <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
             <div id="mySidepanel" class="sidepanel">
                 <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
+                <a href="{{ url_for('focus') }}" class="navbar-item">Focus</a>
                 <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
                 <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
-        
+                <a href="{{ url_for('settings') }}" class="navbar-item">Settings</a>
+
                 <div class="dropdown">
                     <a class="dropbtn">Agenda</a>
                     <div class="dropdown-content">
