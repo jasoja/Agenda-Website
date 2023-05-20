@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, session,flash
-from datetime import datetime
+from datetime import datetime, timedelta
 from . import app, webapp
 from vision_app import db
 from vision_app.models import User, Item
+import openai
+
+openai.api_key = ""
 
 @app.route("/")
 def home():
@@ -116,14 +119,40 @@ def calendar():
 		return render_template('calendar.html',  tasks=tasks) 
 	return render_template("calendar.html", tasks=tasks)
 
-@app.route("/checklist/", methods = ['POST', 'GET'])
+
+def chat_with_gpt(user_input):
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": user_input},
+        ]
+    )
+    return response.choices[0].message.content
+
+
+
+@app.route("/checklist/", methods=['POST', 'GET'])
 def checklist():
-	user_id = None
-	if session['user']:
-		user_id = session['user']
-		tasks = Item.query.filter_by(user_id=user_id)
-		return render_template('checklist.html', tasks=tasks)
-	return render_template('checklist.html')
+    user_id = None
+    if session['user']:
+        user_id = session['user']
+        tasks = Item.query.filter_by(user_id=user_id)
+        approaching_tasks = []
+        current_time = datetime.now()
+        deadline_threshold = current_time + timedelta(hours=24)
+        for task in tasks:
+            if task.date >= deadline_threshold:
+                approaching_tasks.append(task)
+
+        if request.method == 'POST':
+            user_input = request.form['user_input']
+            response = chat_with_gpt(user_input)
+            return render_template('checklist.html', tasks=tasks, approaching_tasks=approaching_tasks, response=response)
+
+        return render_template('checklist.html', tasks=tasks, approaching_tasks=approaching_tasks)
+
+    return render_template('checklist.html')
 
 @app.route("/checklist/remove_task/<task_name>", methods=['GET', 'POST'])
 def remove_task(task_name):

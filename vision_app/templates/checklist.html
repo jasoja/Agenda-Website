@@ -97,8 +97,34 @@
 
     <br>
 
+    {% if approaching_tasks %}
+    <div id="notifications">
+      <h2>Approaching Task Deadlines:</h2>
+      {% for task in approaching_tasks %}
+        <div class="notification">
+          <p>{{ task.task }}</p>
+          <p>Deadline: {{ task.date }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <form action="{{ url_for('checklist') }}" method="POST">
+    <div class="chat-container">
+      <input type="text" name="user_input" placeholder="Ask a question" class="chat-input">
+      <button type="submit" class="chat-send">Send</button>
+    </div>
+  </form>
+  
+  {% if response %}
+  <div class="chat-container">
+    <div class="chat-response">{{ response }}</div>
+  </div>
+  {% endif %}
+  
+
     <div id="task-list">
-      <p>Task</p><p>Description</p><p>Due Date</p><p>Delete</p>
+      <p>Task</p><p>Description</p><p>Due Date</p><p></p>
 
       {% for task in tasks %}
           <p>{{task.task}}</p><p>{{task.course_category}}</p><p>{{task.date}}</p><a href="{{url_for('remove_task', task_name = task.task)}}">Delete</a>

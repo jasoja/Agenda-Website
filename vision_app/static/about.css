@@ -48,6 +48,14 @@
 .container .content h2,
 .container .content p
 {
-    backdrop-filter: blur(100px);
     transition: 0.5s;
+}
+.container .content h2,
+.container .content p
+{
+    text-shadow:
+        0.05em 0 white,
+        0 0.05em white,
+        -0.05em 0 white,
+        0 -0.05em white;
 }
