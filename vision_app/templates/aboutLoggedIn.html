@@ -29,16 +29,12 @@
         <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
         <div id="mySidepanel" class="sidepanel">
             <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
+            <a href="{{ url_for('focus') }}" class="navbar-item">Focus</a>
             <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
+            <a href="{{ url_for('calendar') }}" class="navbar-item">Calendar</a>
+            <a href="{{ url_for('checklist') }}"class="navbar-item">Checklist</a>
+            <a href="{{ url_for('settings') }}" class="navbar-item">Settings</a>
             <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
-    
-            <div class="dropdown">
-                <a class="dropbtn">Agenda</a>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('calendar') }}">Calendar</a>
-                    <a href="{{ url_for('checklist') }}">Checklist</a>
-                </div>
-            </div>
         </div>
     </div>
     </div> 
