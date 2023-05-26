@@ -3,12 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="/static/site.css">
+
         <link rel="stylesheet" href="/static/dropdown.css">
         <link rel="stylesheet" href="/static/navbar2.css">
         <link rel="stylesheet" href="/static/settings.css">
-
-
-
         <script src='/static/position.js'></script>
         <script src='/static/burgermenu.js'></script>
         <script src ='/static/bgchanger.js'></script>
@@ -26,7 +25,6 @@
         <div id="mySidepanel" class="sidepanel">
             <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
             <a href="{{ url_for('focus') }}" class="navbar-item">Focus</a>
-            <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
             <a href="{{ url_for('calendar') }}" class="navbar-item">Calendar</a>
             <a href="{{ url_for('checklist') }}"class="navbar-item">Checklist</a>
             <a href="{{ url_for('settings') }}" class="navbar-item">Settings</a>
