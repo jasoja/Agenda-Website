@@ -11,9 +11,11 @@
 
         <script src='/static/position.js'></script>
         <script src='/static/burgermenu.js'></script>
-        <script src ='/static/script4.js'></script>
-    </head>
+        <script src ='/static/bgchanger.js'></script>
+        <script src ='/static/navchanger.js'></script>
 
+    </head>
+    <title>Settings</title>
 
 <body>
     <div class="navbar">
@@ -40,6 +42,10 @@
             <input type="color" id="bgPicker" onchange = "bgchange(this.value)">
         </div>
 
+        <h1>Choose your navbar color:</h1>
+        <div class="picker">
+            <input type="color" id="navbarPicker" onchange="changeNavbarColor(this.value)">
+          </div>
     </div>
 
     <script src="script4.js"></script>
