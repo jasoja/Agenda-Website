@@ -5,7 +5,7 @@ from vision_app import db
 from vision_app.models import User, Item
 import openai
 
-openai.api_key = "sk-glpat-CjLr1JG6qCgV3akQcARH"
+openai.api_key = "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"
 
 @app.route("/")
 def home():
@@ -124,7 +124,7 @@ def chat_with_gpt(user_input):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "system", "content": "You are a helpful assistant on a webapp agenda called Mangrove. Be sure to greet the user and help them organize their schedule. Do not let them inquiry any other tasks if it is over their fifth inquiry to you."},
             {"role": "user", "content": user_input},
         ]
     )
