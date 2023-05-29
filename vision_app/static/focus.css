@@ -1,3 +1,7 @@
+button:hover {
+  cursor: pointer;
+}
+
 .audio-container {
     text-align: center;
   }
