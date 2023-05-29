@@ -5,7 +5,7 @@ from vision_app import db
 from vision_app.models import User, Item
 import openai
 
-openai.api_key = "glpat-CjLr1JG6qCgV3akQcARH"
+openai.api_key = "sk-glpat-CjLr1JG6qCgV3akQcARH"
 
 @app.route("/")
 def home():
